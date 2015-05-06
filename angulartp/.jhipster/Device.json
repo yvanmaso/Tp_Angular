@@ -1,0 +1,66 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "home",
+            "relationshipNameCapitalized": "Home",
+            "relationshipFieldName": "home",
+            "otherEntityName": "home",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Home",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Nom",
+            "fieldNameUnderscored": "nom",
+            "fieldInJavaBeanMethod": "Nom",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "modele",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Modele",
+            "fieldNameUnderscored": "modele",
+            "fieldInJavaBeanMethod": "Modele",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "marque",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Marque",
+            "fieldNameUnderscored": "marque",
+            "fieldInJavaBeanMethod": "Marque",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "conso",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "Conso",
+            "fieldNameUnderscored": "conso",
+            "fieldInJavaBeanMethod": "Conso",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150501202540",
+    "pagination": "no",
+    "validation": true
+}

@@ -1,0 +1,144 @@
+<div>
+
+    <h2 translate="angulartpApp.home.home.title">Home</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#saveHomeModal" ng-click="clear()">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="angulartpApp.home.home.createLabel">Create a new Home</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="saveHomeModal" tabindex="-1" role="dialog" aria-labelledby="myHomeLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()" show-validation>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myHomeLabel" translate="angulartpApp.home.home.createOrEditLabel">Create or edit a Home</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="home.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="angulartpApp.home.adresse">Adresse</label>
+                            <input type="text" class="form-control" name="adresse"
+                                   ng-model="home.adresse">
+
+                            <div ng-show="editForm.adresse.$invalid">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="angulartpApp.home.aire">Aire</label>
+                            <input type="number" class="form-control" name="aire"
+                                   ng-model="home.aire">
+
+                            <div ng-show="editForm.aire.$invalid">
+                                <p class="help-block"
+                                   ng-show="editForm.aire.$error.number" translate="entity.validation.number">
+                                    This field should be a number.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="angulartpApp.home.ip">Ip</label>
+                            <input type="text" class="form-control" name="ip"
+                                   ng-model="home.ip">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="angulartpApp.home.person">person</label>
+                            <select class="form-control" name="person" ng-model="home.person.id" ng-options="person.id as person.id for person in persons">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteHomeConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(home.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="angulartpApp.home.delete.question" translate-values="{id: '{{home.id}}'}">Are you sure you want to delete this Home?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="angulartpApp.home.adresse">Adresse</th>
+                    <th translate="angulartpApp.home.aire">Aire</th>
+                    <th translate="angulartpApp.home.ip">Ip</th>
+                    <th translate="angulartpApp.home.person">person</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="home in homes">
+                    <td><a ui-sref="homeDetail({id:home.id})">{{home.id}}</a></td>
+                    <td>{{home.adresse}}</td>
+                    <td>{{home.aire}}</td>
+                    <td>{{home.ip}}</td>
+                    <td>{{home.person.id}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="homeDetail({id:home.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(home.id)"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(home.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

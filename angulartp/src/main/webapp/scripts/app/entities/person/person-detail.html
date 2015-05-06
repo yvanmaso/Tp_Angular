@@ -1,0 +1,70 @@
+
+<div>
+    <h2><span translate="angulartpApp.person.detail.title">Person</span> {{person.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.person.nom">Nom</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{person.nom}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.person.prenom">Prenom</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{person.prenom}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.person.genre">Genre</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{person.genre}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.person.mail">Mail</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{person.mail}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.person.datenaiss">Datenaiss</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{person.datenaiss}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.person.profil">Profil</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{person.profil}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="person"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

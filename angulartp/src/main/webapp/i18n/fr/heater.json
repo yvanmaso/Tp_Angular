@@ -1,0 +1,23 @@
+{
+    "angulartpApp": {
+        "heater" : {
+            "home": {
+                "title": "Heaters",
+                "createLabel": "Créer un nouveau Heater",
+                "createOrEditLabel": "Créer ou éditer un Heater"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Heater {{ id }} ?"
+            },
+            "detail": {
+                "title": "Heater"
+            },
+            "nom": "Nom",
+            "modele": "Modele",
+            "marque": "Marque",
+            "conso": "Conso",
+            "home": "home"
+        }
+    }
+}
+

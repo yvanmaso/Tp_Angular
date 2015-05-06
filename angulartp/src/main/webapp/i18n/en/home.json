@@ -1,0 +1,23 @@
+{
+    "angulartpApp": {
+        "home" : {
+            "home": {
+                "title": "Homes",
+                "createLabel": "Create a new Home",
+                "createOrEditLabel": "Create or edit a Home"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Home {{ id }}?"
+            },
+            "detail": {
+                "title": "Home"
+            },
+            "adresse": "Adresse",
+            "aire": "Aire",
+            "ip": "Ip",
+            "person": "person",
+            "heaters": "heaters",
+            "devices": "devices"
+        }
+    }
+}

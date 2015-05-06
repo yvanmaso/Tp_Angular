@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity Heater.
+    -->
+    <changeSet id="20150501202337" author="jhipster">
+        <createTable tableName="HEATER">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nom" type="varchar(255)"/>
+            <column name="modele" type="varchar(255)"/>
+            <column name="marque" type="varchar(255)"/>
+            <column name="conso" type="integer"/>
+            <column name="home_id" type="bigint"/>
+        </createTable>
+        
+        <addForeignKeyConstraint baseColumnNames="home_id"
+                                 baseTableName="HEATER"
+                                 constraintName="fk_heater_home_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="HOME"/>
+
+    </changeSet>
+</databaseChangeLog>

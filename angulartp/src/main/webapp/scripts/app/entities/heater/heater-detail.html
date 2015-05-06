@@ -1,0 +1,62 @@
+
+<div>
+    <h2><span translate="angulartpApp.heater.detail.title">Heater</span> {{heater.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.heater.nom">Nom</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{heater.nom}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.heater.modele">Modele</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{heater.modele}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.heater.marque">Marque</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{heater.marque}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.heater.conso">Conso</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{heater.conso}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.heater.home">home</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{heater.home.id}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="heater"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

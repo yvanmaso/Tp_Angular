@@ -1,0 +1,73 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "person",
+            "relationshipNameCapitalized": "Person",
+            "relationshipFieldName": "person",
+            "otherEntityName": "person",
+            "relationshipType": "many-to-one",
+            "otherEntityNameCapitalized": "Person",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "heaters",
+            "relationshipNameCapitalized": "Heaters",
+            "relationshipFieldName": "heaters",
+            "otherEntityName": "heater",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "Heater"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "devices",
+            "relationshipNameCapitalized": "Devices",
+            "relationshipFieldName": "devices",
+            "otherEntityName": "device",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "Device"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "adresse",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Adresse",
+            "fieldNameUnderscored": "adresse",
+            "fieldInJavaBeanMethod": "Adresse",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "aire",
+            "fieldType": "Integer",
+            "fieldNameCapitalized": "Aire",
+            "fieldNameUnderscored": "aire",
+            "fieldInJavaBeanMethod": "Aire",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "ip",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Ip",
+            "fieldNameUnderscored": "ip",
+            "fieldInJavaBeanMethod": "Ip",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150501202128",
+    "pagination": "no",
+    "validation": true
+}

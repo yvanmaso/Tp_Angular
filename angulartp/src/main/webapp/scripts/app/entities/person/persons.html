@@ -1,0 +1,159 @@
+<div>
+
+    <h2 translate="angulartpApp.person.home.title">Person</h2>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" data-toggle="modal" data-target="#savePersonModal" ng-click="clear()">
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="angulartpApp.person.home.createLabel">Create a new Person</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="savePersonModal" tabindex="-1" role="dialog" aria-labelledby="myPersonLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate ng-submit="create()" show-validation>
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myPersonLabel" translate="angulartpApp.person.home.createOrEditLabel">Create or edit a Person</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="person.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="angulartpApp.person.nom">Nom</label>
+                            <input type="text" class="form-control" name="nom"
+                                   ng-model="person.nom">
+
+                            <div ng-show="editForm.nom.$invalid">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="angulartpApp.person.prenom">Prenom</label>
+                            <input type="text" class="form-control" name="prenom"
+                                   ng-model="person.prenom">
+
+                            <div ng-show="editForm.prenom.$invalid">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="angulartpApp.person.genre">Genre</label>
+                            <input type="text" class="form-control" name="genre"
+                                   ng-model="person.genre">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="angulartpApp.person.mail">Mail</label>
+                            <input type="text" class="form-control" name="mail"
+                                   ng-model="person.mail">
+
+                        </div>
+                        <div class="form-group">
+                            <label translate="angulartpApp.person.datenaiss">Datenaiss</label>
+                            <input type="date" class="form-control" name="datenaiss"
+                                   ng-model="person.datenaiss">
+
+                            <div ng-show="editForm.datenaiss.$invalid">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label translate="angulartpApp.person.profil">Profil</label>
+                            <input type="text" class="form-control" name="profil"
+                                   ng-model="person.profil">
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deletePersonConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(person.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="angulartpApp.person.delete.question" translate-values="{id: '{{person.id}}'}">Are you sure you want to delete this Person?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="angulartpApp.person.nom">Nom</th>
+                    <th translate="angulartpApp.person.prenom">Prenom</th>
+                    <th translate="angulartpApp.person.genre">Genre</th>
+                    <th translate="angulartpApp.person.mail">Mail</th>
+                    <th translate="angulartpApp.person.datenaiss">Datenaiss</th>
+                    <th translate="angulartpApp.person.profil">Profil</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="person in persons">
+                    <td><a ui-sref="personDetail({id:person.id})">{{person.id}}</a></td>
+                    <td>{{person.nom}}</td>
+                    <td>{{person.prenom}}</td>
+                    <td>{{person.genre}}</td>
+                    <td>{{person.mail}}</td>
+                    <td>{{person.datenaiss}}</td>
+                    <td>{{person.profil}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="personDetail({id:person.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(person.id)"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(person.id)"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

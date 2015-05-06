@@ -1,0 +1,54 @@
+
+<div>
+    <h2><span translate="angulartpApp.home.detail.title">Home</span> {{home.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.home.adresse">Adresse</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{home.adresse}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.home.aire">Aire</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{home.aire}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.home.ip">Ip</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{home.ip}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.home.person">person</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{home.person.id}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="home"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

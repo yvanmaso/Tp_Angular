@@ -1,0 +1,91 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "homes",
+            "relationshipNameCapitalized": "Homes",
+            "relationshipFieldName": "homes",
+            "otherEntityName": "home",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "Home"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "amis",
+            "relationshipNameCapitalized": "Amis",
+            "relationshipFieldName": "amis",
+            "otherEntityName": "person",
+            "relationshipType": "one-to-many",
+            "otherEntityNameCapitalized": "Person"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Nom",
+            "fieldNameUnderscored": "nom",
+            "fieldInJavaBeanMethod": "Nom",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "prenom",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Prenom",
+            "fieldNameUnderscored": "prenom",
+            "fieldInJavaBeanMethod": "Prenom",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "genre",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Genre",
+            "fieldNameUnderscored": "genre",
+            "fieldInJavaBeanMethod": "Genre",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "mail",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Mail",
+            "fieldNameUnderscored": "mail",
+            "fieldInJavaBeanMethod": "Mail",
+            "fieldValidate": false
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "datenaiss",
+            "fieldType": "LocalDate",
+            "fieldNameCapitalized": "Datenaiss",
+            "fieldNameUnderscored": "datenaiss",
+            "fieldInJavaBeanMethod": "Datenaiss",
+            "fieldValidate": true,
+            "fieldValidateRules": []
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "profil",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Profil",
+            "fieldNameUnderscored": "profil",
+            "fieldInJavaBeanMethod": "Profil",
+            "fieldValidate": false
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": true,
+    "fieldsContainLocalDate": true,
+    "fieldsContainCustomTime": true,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150501201806",
+    "pagination": "no",
+    "validation": true
+}

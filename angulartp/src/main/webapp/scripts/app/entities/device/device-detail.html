@@ -1,0 +1,62 @@
+
+<div>
+    <h2><span translate="angulartpApp.device.detail.title">Device</span> {{device.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.device.nom">Nom</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{device.nom}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.device.modele">Modele</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{device.modele}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.device.marque">Marque</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{device.marque}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.device.conso">Conso</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{device.conso}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="angulartpApp.device.home">home</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{device.home.id}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            ui-sref="device"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

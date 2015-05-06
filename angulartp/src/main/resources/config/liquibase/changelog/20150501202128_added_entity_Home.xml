@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <!--
+        Added the entity Home.
+    -->
+    <changeSet id="20150501202128" author="jhipster">
+        <createTable tableName="HOME">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="adresse" type="varchar(255)"/>
+            <column name="aire" type="integer"/>
+            <column name="ip" type="varchar(255)"/>
+            <column name="person_id" type="bigint"/>
+        </createTable>
+        
+        <addForeignKeyConstraint baseColumnNames="person_id"
+                                 baseTableName="HOME"
+                                 constraintName="fk_home_person_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="PERSON"/>
+
+    </changeSet>
+</databaseChangeLog>

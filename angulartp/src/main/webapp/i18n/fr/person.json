@@ -1,0 +1,26 @@
+{
+    "angulartpApp": {
+        "person" : {
+            "home": {
+                "title": "Persons",
+                "createLabel": "Créer un nouveau Person",
+                "createOrEditLabel": "Créer ou éditer un Person"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Person {{ id }} ?"
+            },
+            "detail": {
+                "title": "Person"
+            },
+            "nom": "Nom",
+            "prenom": "Prenom",
+            "genre": "Genre",
+            "mail": "Mail",
+            "datenaiss": "Datenaiss",
+            "profil": "Profil",
+            "homes": "homes",
+            "amis": "amis"
+        }
+    }
+}
+

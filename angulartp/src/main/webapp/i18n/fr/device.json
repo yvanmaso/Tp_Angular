@@ -1,0 +1,23 @@
+{
+    "angulartpApp": {
+        "device" : {
+            "home": {
+                "title": "Devices",
+                "createLabel": "Créer un nouveau Device",
+                "createOrEditLabel": "Créer ou éditer un Device"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Device {{ id }} ?"
+            },
+            "detail": {
+                "title": "Device"
+            },
+            "nom": "Nom",
+            "modele": "Modele",
+            "marque": "Marque",
+            "conso": "Conso",
+            "home": "home"
+        }
+    }
+}
+
